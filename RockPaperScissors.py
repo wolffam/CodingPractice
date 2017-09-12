@@ -9,9 +9,7 @@ def request_input(player_num):
 
 def main():
     valid_inputs = ['ROCK','PAPER','SCISSORS']
-    decided = False
-    winner = None
-    while not decided:
+    while True:
         act_1 = request_input(1)
         act_2 = request_input(2)
         if not {act_1,act_2}.issubset(valid_inputs):
