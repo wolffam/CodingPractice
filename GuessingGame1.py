@@ -1,12 +1,16 @@
 # Generate random # 1-9, ask for user guess, and return feedback until they get it correct
 import random
 
+
 def main():
     rand_num = random.randint(1,9)
     count = 0
     while True:
         count += 1
-        user_guess = int(input('Guess a number from 1-9...'))
+        try:
+            user_guess = int(input('Guess an integer from 1-9...'))
+        except ValueError:
+            print('Please provide an integer 1 <= N <= 9')
         if user_guess > 9 or user_guess < 1:
             print('IMPROPER GUESS!!! Try again :P\n')
         elif user_guess > rand_num:
